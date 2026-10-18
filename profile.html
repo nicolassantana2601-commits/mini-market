@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F7F5EF">
+  <meta name="description" content="Your Mini Market profile and saved favorite finds.">
+  <title>My profile — Mini Market</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./profile.css">
+  <script defer src="./profile.js"></script>
+</head>
+<body class="profile-page">
+  <header class="auth-header profile-header">
+    <a class="brand" href="./index.html"><span class="brand-mark">m</span>mini market<span class="brand-dot">.</span></a>
+    <a class="auth-home" href="./index.html#discover">← Continue exploring</a>
+  </header>
+  <main class="profile-main">
+    <div class="profile-heading">
+      <div><p class="profile-breadcrumb">Mini Market <span aria-hidden="true">/</span> Your profile</p><h1>Your profile</h1><p>Your own little collection of things you love.</p></div>
+      <a class="profile-explore" href="./index.html#discover"><span aria-hidden="true">✳</span> Find something new</a>
+    </div>
+    <div class="profile-layout">
+      <aside class="profile-sidebar" aria-label="Profile navigation">
+        <div class="sidebar-label">Your space</div>
+        <div class="profile-local-avatar" aria-hidden="true">m<span>✳</span></div>
+        <h2 class="profile-local-title">Curious collector</h2>
+        <p class="profile-local-note">Your saved finds live in this browser.</p>
+        <a class="profile-nav-link is-current" href="#saved-finds" aria-current="page"><span aria-hidden="true">♥</span> Favorite finds</a>
+        <a class="profile-nav-link" href="./index.html#discover"><span aria-hidden="true">⌕</span> Explore products</a>
+        <div class="sidebar-note"><span aria-hidden="true">✦</span><p>Tap the heart on anything you like and it’ll be waiting here.</p></div>
+      </aside>
+      <section class="profile-panel profile-favorites-panel" id="saved-finds" aria-labelledby="saved-title">
+        <div class="panel-heading">
+          <div><p class="panel-kicker">Saved for later</p><h2 id="saved-title">Your favorite finds</h2></div>
+          <span class="saved-count" id="saved-count">0 finds</span>
+        </div>
+        <div class="profile-favorites-grid" id="saved-products" aria-live="polite"></div>
+        <div class="profile-empty-state" id="profile-empty-state" hidden>
+          <div class="profile-empty-icon" aria-hidden="true">♡</div>
+          <h3>No favorites saved yet</h3>
+          <p>When a product catches your eye, tap its heart. Your saved finds will show up here.</p>
+          <a class="empty-explore-button" href="./index.html#discover">Explore products <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="profile-storage-note"><span aria-hidden="true">ⓘ</span> Favorites are saved in this browser on this device.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="auth-footer">Mini Market <span aria-hidden="true">·</span> Curated with a curious eye</footer>
+</body>
+</html>

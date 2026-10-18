@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#F7F5EF">
+  <title>Create account — Mini Market</title>
+  <link rel="stylesheet" href="./auth.css">
+  <script defer src="./password-toggle.js"></script>
+  <script type="module" src="./user-pages.js"></script>
+</head>
+<body class="auth-page" data-page="signup">
+  <header class="auth-header">
+    <a class="brand" href="./index.html"><span class="brand-mark">m</span>mini market<span class="brand-dot">.</span></a>
+    <a class="auth-home" href="./index.html">← Back to browsing</a>
+  </header>
+  <main class="auth-main">
+    <section class="auth-card">
+      <div class="auth-topline"></div>
+      <div class="eyebrow">Join the curious</div>
+      <h1>Create your account</h1>
+      <p class="auth-intro">Save finds you love and come back to them whenever you like.</p>
+      <p class="auth-config" id="auth-config" hidden></p>
+      <p class="auth-message" id="auth-message" role="status" aria-live="polite"></p>
+      <button class="google-button" id="google-signup" type="button"><span aria-hidden="true">G</span> Continue with Google</button>
+      <div class="auth-divider">or sign up with email</div>
+      <form class="auth-form" id="signup-form" novalidate>
+        <div class="auth-field"><label for="full-name">Name</label><input id="full-name" name="name" autocomplete="name" maxlength="80" required></div>
+        <div class="auth-field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="auth-field"><label for="password">Password</label><div class="auth-password"><input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required aria-describedby="password-help"><button class="password-toggle" type="button" data-toggle-password="password">Show</button></div><small id="password-help" class="password-help">Use at least 8 characters, including a letter and a number.</small></div>
+        <div class="auth-field"><label for="confirm-password">Confirm password</label><div class="auth-password"><input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" required><button class="password-toggle" type="button" data-toggle-password="confirm-password">Show</button></div></div>
+        <button class="auth-submit" type="submit">Create account</button>
+      </form>
+      <p class="auth-switch">Already have an account? <a class="auth-login-link" href="./login.html">Log in</a></p>
+    </section>
+  </main>
+  <footer class="auth-footer">Your account is used to sync favorites across devices.</footer>
+</body>
+</html>
