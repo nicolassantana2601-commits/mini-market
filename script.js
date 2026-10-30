@@ -12,7 +12,7 @@ import { FINDORA_PRODUCTS } from './products.js';
   const empty = document.querySelector('#empty-state');
   const active = document.querySelector('#active-filters');
   const summary = document.querySelector('#result-summary');
-  let chosenCategory = '', collection = 'all', query = '';
+  let chosenCategory = '', collection = 'recommended', query = '';
   const categoryList = document.querySelector('#category-list');
   categories.forEach(([name, icon]) => {
     const button = document.createElement('button');
@@ -51,7 +51,7 @@ import { FINDORA_PRODUCTS } from './products.js';
     const items = currentItems().slice(0, 5);
     grid.innerHTML = items.map(productCard).join('');
     empty.hidden = items.length > 0; grid.hidden = items.length === 0;
-    active.hidden = !(query || chosenCategory || collection !== 'all');
+    active.hidden = !(query || chosenCategory);
     if (!active.hidden) summary.textContent = `${items.length} ${items.length === 1 ? 'find' : 'finds'}${chosenCategory ? ` in ${chosenCategory}` : ''}${query ? ` matching “${query}”` : ''}`;
     grid.querySelectorAll('[data-details]').forEach(btn => btn.addEventListener('click', () => openDetails(products.find(p => p.id === btn.dataset.details))));
   }
@@ -68,7 +68,7 @@ import { FINDORA_PRODUCTS } from './products.js';
   function updateCategoryState() {
     categoryList.querySelectorAll('.category-card').forEach(btn => { const selected = btn.dataset.category === chosenCategory; btn.classList.toggle('selected', selected); btn.setAttribute('aria-pressed', String(selected)); });
   }
-  function clearFilters() { query = ''; chosenCategory = ''; collection = 'all'; search.value = ''; document.querySelectorAll('.filter-tab').forEach(t => t.classList.toggle('selected', t.dataset.collection === 'all')); updateCategoryState(); render(); }
+  function clearFilters() { query = ''; chosenCategory = ''; collection = 'recommended'; search.value = ''; document.querySelectorAll('.filter-tab').forEach(t => t.classList.toggle('selected', t.dataset.collection === 'recommended')); updateCategoryState(); render(); }
   function showNotice(message, error = false) { const note = document.querySelector('#site-notice'); note.textContent = message; note.classList.toggle('error', error); note.hidden = false; }
   document.querySelector('#search-form').addEventListener('submit', e => { e.preventDefault(); query = search.value.trim(); render(); document.querySelector('#discover').scrollIntoView({behavior:'smooth'}); });
   search.addEventListener('input', () => { query = search.value.trim(); render(); });
